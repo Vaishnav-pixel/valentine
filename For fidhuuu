@@ -116,3 +116,137 @@
     .btn {
       margin-top: 20px;
       padding: 12px 28px;
+      background: #ff3366;
+      border: none;
+      border-radius: 30px;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #e6004c;
+      transform: scale(1.05);
+    }
+
+    /* Secret */
+    #secret {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.3rem;
+      color: #b8004c;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      color: #fff;
+      background: rgba(0,0,0,0.15);
+      margin-top: 50px;
+    }
+
+    /* Hearts */
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 22px;
+      animation: float 6s linear infinite;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); opacity:1; }
+      100% { transform: translateY(-110vh); opacity:0; }
+    }
+  </style></head>
+<body><!-- Background Music --><audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio><!-- Cover Section --><div class="cover">
+  <div class="cover-content">
+    <h1>Happy Valentine's Day ❤️</h1>
+    <p>Vaishnav & Fidha 💕 Forever</p>
+  </div>
+</div><!-- Main Content --><div class="container">  <!-- Love Letter -->  <div class="card">
+    <h2>My Love Letter 💌</h2>
+    <p>
+      My dearest Fidha,<br><br>
+      Every day with you feels magical. Your smile is my peace,
+      your love is my strength, and your presence makes my world complete.
+      I am so lucky to have you in my life. ❤️<br><br>
+      I love you more than words can express.
+    </p>
+  </div>  <!-- Gallery -->  <div class="card">
+    <h2>Our Beautiful Memories 📸</h2><div class="gallery">
+
+  <div class="photo-box">
+    <img src="photo1.jpg">
+    <div class="caption">My favorite smile ❤️</div>
+  </div>
+
+  <div class="photo-box">
+    <img src="photo2.jpg">
+    <div class="caption">Pure happiness 💕</div>
+  </div>
+
+  <div class="photo-box">
+    <img src="photo3.jpg">
+    <div class="caption">My safe place 🤗</div>
+  </div>
+
+  <div class="photo-box">
+    <img src="photo4.jpg">
+    <div class="caption">Best moments together ✨</div>
+  </div>
+
+  <div class="photo-box">
+    <img src="photo5.jpg">
+    <div class="caption">With you forever 💖</div>
+  </div>
+
+  <div class="photo-box">
+    <img src="photo6.jpg">
+    <div class="caption">My favorite person 🥰</div>
+  </div>
+
+  <div class="photo-box">
+    <img src="photo7.jpg">
+    <div class="caption">Love of my life 💘</div>
+  </div>
+
+  <div class="photo-box">
+    <img src="photo8.jpg">
+    <div class="caption">Always us 💞</div>
+  </div>
+
+</div>
+
+  </div>  <!-- Surprise -->  <div class="card">
+    <h2>A Special Message 🎁</h2>
+    <p>Click below to see my heart…</p>
+    <button class="btn" onclick="showSecret()">Open ❤️</button>
+    <div id="secret">Fidha, you are my today, my tomorrow, and my forever 💍❤️</div>
+  </div></div><!-- Footer --><footer>
+  Made with ❤️ by Vaishnav for Fidha
+</footer><script>
+  function showSecret(){
+    document.getElementById("secret").style.display="block";
+  }
+
+  function createHeart(){
+    const heart=document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(Math.random()*3+4)+"s";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),6000);
+  }
+
+  setInterval(createHeart,500);
+</script></body>
+</html>
